@@ -97,7 +97,6 @@ proxies:
       h2: 2
       h4: 3
       h3: 4
-
   - name: "🇩🇪 Warp - IPv4-1"
     type: wireguard
     ip: 172.16.0.2/32
@@ -111,7 +110,6 @@ proxies:
     udp: true
     mtu: 1280
     dialer-proxy: "🇮🇷 Warp - IPv4-1"
-
   - name: "🇦🇺 Australia - IPv4-1"
     type: wireguard
     ip: 100.80.234.177/32
@@ -122,10 +120,10 @@ proxies:
     public-key: "jCi1I5HBTtwCblBbMzOFmOOFNG1GilYOZgst0kyq9gY="
     pre-shared-key: "N/gfMZSjvP8mbXfVP2hnD5CX8BkGvOyheJ67mCpD+QQ="
     allowed-ips:
-  - "8.8.8.8/32"      # فقط DNS گوگل
-  - "2001:4860:4860::8888/128"  # DNS گوگل IPv6
-  - "1.1.1.1/32"      # DNS Cloudflare
-  - "2606:4700:4700::1111/128"  # DNS Cloudflare IPv6
+      - "8.8.8.8/32" # فقط DNS گوگل
+      - "2001:4860:4860::8888/128" # DNS گوگل IPv6
+      - "1.1.1.1/32" # DNS Cloudflare
+      - "2606:4700:4700::1111/128" # DNS Cloudflare IPv6
     reserved: "AAAA"
     udp: true
     mtu: 1280
@@ -140,7 +138,6 @@ proxies:
       h2: 2
       h3: 3
       h4: 4
-
   - name: "🇮🇷 Warp - IPv6"
     type: wireguard
     ip: 172.16.0.2/32
@@ -164,7 +161,6 @@ proxies:
       h2: 2
       h4: 3
       h3: 4
-
   - name: "🇸🇪 Warp - IPv6"
     type: wireguard
     ip: 172.16.0.2/32
@@ -178,7 +174,6 @@ proxies:
     udp: true
     mtu: 1280
     dialer-proxy: "🇮🇷 Warp - IPv6"
-
 proxy-groups:
   - name: "🌐 گلوبال"
     type: select
@@ -189,7 +184,6 @@ proxy-groups:
       - "🇦🇺 Australia - IPv4-1"
       - "🇮🇷 Warp - IPv6"
       - "🇸🇪 Warp - IPv6"
-
   - name: "🚀 انتخاب خودکار (بهترین)"
     type: url-test
     url: "https://www.gstatic.com/generate_204"
@@ -201,7 +195,6 @@ proxy-groups:
       - "🇦🇺 Australia - IPv4-1"
       - "🇮🇷 Warp - IPv6"
       - "🇸🇪 Warp - IPv6"
-
 rule-providers:
   ir:
     type: http
@@ -245,7 +238,6 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/ads.txt"
     path: "./ruleset/ads.txt"
     interval: 86400
-
 rules:
   - RULE-SET,ir,DIRECT
   - RULE-SET,ir-cidr,DIRECT
@@ -254,7 +246,6 @@ rules:
   - RULE-SET,cryptominers,REJECT
   - RULE-SET,ads,REJECT
   - MATCH,🌐 گلوبال
-
 ntp:
   enable: true
   server: "time.apple.com"
