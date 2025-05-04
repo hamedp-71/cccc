@@ -122,7 +122,11 @@ proxies:
     port: 65142
     public-key: "jCi1I5HBTtwCblBbMzOFmOOFNG1GilYOZgst0kyq9gY="
     pre-shared-key: "N/gfMZSjvP8mbXfVP2hnD5CX8BkGvOyheJ67mCpD+QQ="
-    allowed-ips: ["0.0.0.0/0", "::/0"]
+    allowed-ips:
+  - "8.8.8.8/32"      # فقط DNS گوگل
+  - "2001:4860:4860::8888/128"  # DNS گوگل IPv6
+  - "1.1.1.1/32"      # DNS Cloudflare
+  - "2606:4700:4700::1111/128"  # DNS Cloudflare IPv6
     reserved: "AAAA"
     udp: true
     mtu: 1280
